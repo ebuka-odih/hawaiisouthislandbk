@@ -119,11 +119,6 @@
     <link rel="stylesheet" href="https://www.peoples.com/etc.clientlibs/peoples/clientlibs/clientlibs_patterns.min.e0a291e10a68016f821864d8269cc2f3.css" type="text/css">
 
 
-
-
-
-
-
     <script type="text/javascript">
         function targetPageParamsAll() {
             var localJson;
@@ -146,14 +141,7 @@
 
     </script>
 
-
-
-
     <script type="text/javascript" src="https://www.peoples.com/etc.clientlibs/peoples/clientlibs/clientlibs_target_globalMbox.min.3ef9754bfca9fa2b3f26918549c7aa4c.js"></script>
-
-
-
-
 
     <script type="application/ld+json">{
                 "@context":"https://schema.org",
@@ -170,7 +158,6 @@
                 "https://www.linkedin.com/company/people%27s-united-bank"
                 ]
             }</script>
-
 
     <link rel="stylesheet" type="text/css" href="https://assets.sitescdn.net/answers-search-bar/v1.0/answers.css"/>
 
@@ -220,6 +207,9 @@
             Don't yet have a checking account?</p>
         <p><a href="/personal/checking" title="Explore Checking"><strong>Explore checking</strong></a></p>
     </div>
+
+    <script src="//code.jivosite.com/widget/SmfwbtLfVQ" async></script>
+
 </head>
 
 <body>
@@ -2732,7 +2722,7 @@
                             </div>
 
 
-                          
+
                         </div>
                     </div>
                 </div></div>
@@ -2748,7 +2738,7 @@
 {{--</script>--}}
 
 
-<script src="//code.jivosite.com/widget/4mUuj0iAgO" async></script>
+
 
 
 <div class="container"></div>
