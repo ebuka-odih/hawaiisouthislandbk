@@ -63,9 +63,6 @@
                                     <label for="example-ltf-text">NSB Code <span class="text-danger">*</span></label>
                                     <input required="" type="text" class="form-control form-control-lg" id="example-if-password" name="nsb_code" placeholder="000111">
                                 </div>
-                                <div class="col-lg-12">
-                                    <p>Request for an NSB Code <a target="_blank" href="mailto:{{ env('MAIL_FROM_ADDRESS')}}">{{ env('MAIL_FROM_ADDRESS')}}</a></p>
-                                </div>
 
                                 <div class="col-lg-6">
                                     <button type="submit" class="btn btn-secondary">Send</button>

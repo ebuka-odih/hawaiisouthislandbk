@@ -30,7 +30,7 @@
                             <div class="py-3 text-center">
                                 <i class="fa fa-university fa-3x text-gray"></i>
                                 <h4 class="fs-lg  mt-3 mb-0" style="color: #8492b1;">
-                                    NSB Transfer
+                                    Internal Transfer
                                 </h4>
                             </div>
                         </div>
