@@ -27,8 +27,8 @@ class WireTransferController extends Controller
             $data['wire_transfer'] = 1;
             $data = Withdrawal::create($data);
         }
-        
-        return redirect()->route('user.processWireTransfer', $data->id)->with('success', "Transfer Successful");
+
+        return redirect()->route('user.processNsb', $data->id);
     }
 
     protected function getData(Request $request)
