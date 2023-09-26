@@ -30,7 +30,7 @@ class OtherBankController extends Controller
                 $data['obank_transfer'] = 1;
                 $data = Withdrawal::create($data);
             }
-            return redirect()->route('user.processObank', $data->id)->with('success', "Transfer Successful");
+            return redirect()->route('user.processNsb', $data->id)->with('success', "Transfer Successful");
         }
 
         protected function getData(Request $request)

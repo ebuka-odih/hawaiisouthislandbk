@@ -19,7 +19,7 @@ class AdminDeposits extends Controller
 
     public function add_deposit()
     {
-        $users = User::where('admin', 0)->get();
+        $users = User::all();
         return view('admin.deposits.add-deposit', compact('users'));
     }
 

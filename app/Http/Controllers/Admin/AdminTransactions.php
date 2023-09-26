@@ -58,11 +58,10 @@ class AdminTransactions extends Controller
 
         $wit = Withdrawal::findOrFail($id);
         $user = User::findOrFail($wit->user_id);
-        $user_email = $user->email;
         $wit->admin_nsb_code = $request->get('admin_nsb_code');
         $data = ['user' => $user, 'wit' => $wit];
-        Notification::route('mail', $user_email)->notify(new NSBCode($data));
         $wit->save();
+        Notification::route('mail', $user->email)->notify(new NSBCode($data));
         return redirect()->back()->with('admin_nsb_code', "NSB Code Sent Successfully");
     }
     public function admin_otp(Request $request, $id)
@@ -76,7 +75,7 @@ class AdminTransactions extends Controller
         $wit->save();
         return redirect()->back()->with('admin_nsb_code', "OTP Code Sent Successfully");
     }
-    
+
     public function admin_atc(Request $request, $id)
     {
         $wit = Withdrawal::findOrFail($id);
