@@ -28,6 +28,29 @@
        <br>
        <div class="content content-full content-boxed">
            <a href="{{ route('admin.edit_details', $user_details->id) }}" class="btn btn-secondary">Edit info</a>
+           <br>
+           <div class="col-12 mt-4">
+               <strong>Status {!! $user_details->status() !!}</strong><br>
+               <div class="btn-group mt-3">
+                   <a href="{{ route('admin.onHold', $user_details->id) }}" class="btn btn-sm btn-alt-warning js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
+                       <span>On Hold</span>
+                   </a>
+                   <a href="{{ route('admin.onActive', $user_details->id) }}" class="btn btn-sm btn-alt-success js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
+                       <span>Free</span>
+                   </a>
+                   @if($user_details->status == 0)
+                       <a href="{{ route('admin.approveUser', $user_details->id) }}" class="btn btn-sm btn-alt-info js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
+                           <span>Approve</span>
+                       </a>
+                   @else
+                       <a href="{{ route('admin.suspendUser', $user_details->id) }}" class="btn btn-sm btn-alt-danger js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve User" data-bs-original-title="Edit">
+                           <span>Suspend</span>
+                       </a>
+                   @endif
+
+               </div>
+           </div>
+
            <div class="row">
                <h2 class="content-heading">
                    <i class="fa fa-id-card me-1"></i>Account Details

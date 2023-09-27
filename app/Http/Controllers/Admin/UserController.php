@@ -62,6 +62,20 @@ class UserController extends Controller
         $user->save();
         return redirect()->back()->with('success', "User Has Been suspended");
     }
+    public function onHold($id)
+    {
+        $user = User::findOrFail($id);
+        $user->status = 2;
+        $user->save();
+        return redirect()->back()->with('success', "User Has Been Put On Hold");
+    }
+    public function onActive($id)
+    {
+        $user = User::findOrFail($id);
+        $user->status = 1;
+        $user->save();
+        return redirect()->back()->with('success', "User Has Been Freed");
+    }
 
     public function create()
     {

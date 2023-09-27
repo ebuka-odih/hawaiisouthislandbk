@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Nations Star Bank PLC</title>
+    <title>{{ env('APP_NAME') }}</title>
 
-    <meta name="description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta name="description" content=" - Your growth is our interest.">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Nations Star Bank PLC - Your growth is our interest.">
-    <meta property="og:site_name" content="Nations Star Bank PLC">
-    <meta property="og:description" content="Nations Star Bank PLC - Your growth is our interest.">
+    <meta property="og:title" content=" - Your growth is our interest.">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content=" - Your growth is our interest.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -91,7 +91,7 @@
             <div class="d-flex align-items-center">
                 <!-- Logo -->
                 <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
-                    Nations Star Bank<span class="opacity-75"> PLC</span>
+                    {{ env('APP_NAME') }}
                 </a>
                 <!-- END Logo -->
             </div>
@@ -166,11 +166,13 @@
         <div class="content">
             <!-- Your Block -->
             <div class="block block-rounded">
+                @if(auth()->user()->status < 1)
                 <div class="block-header block-header-default">
                     <h3 class="block-title">
-                        Hello {{ auth()->user()->first_name." ".auth()->user()->last_name }}
+                        Dear {{ auth()->user()->fullname() }}
                     </h3>
                 </div>
+
                 <div class="block-content">
                     <h3>
                         Your account is yet to be activated
@@ -181,6 +183,28 @@
                     <p><a href="mailto:support@nsbplc.com">support@nsbplc.com</a></p>
 
                 </div>
+                @else
+                    <div class="block-content">
+                        <h3 class="text-danger">
+                            Important Account Update
+                        </h3>
+                        <h5>Dear {{ auth()->user()->fullname() }},</h5>
+                        <p>
+                            We regret to inform you that your bank account has been temporarily placed on hold for security reasons.
+                            Please contact our customer support at
+                            <a href="mailto:support@nsbplc.com">support@nsbplc.com</a>
+                            for assistance.
+                        </p>
+                        <p>
+                            Thank you for your understanding.
+                            <br>
+                            Sincerely,
+                            {{ env('APP_NAME') }}
+                        </p>
+
+
+                    </div>
+                @endif
             </div>
             <!-- END Your Block -->
         </div>
@@ -194,7 +218,7 @@
             <div class="row fs-sm">
 
                 <div class="col-sm-6 order-sm-1 text-center text-sm-start">
-                    <a class="fw-semibold" href="https://nsbplc.com" target="_blank">Nations Start Bank PLC</a> &copy; <span data-toggle="year-copy"></span>
+                    <a class="fw-semibold" href="#" target="_blank">{{ env('APP_NAME') }}</a> &copy; <span data-toggle="year-copy"></span>
                 </div>
             </div>
         </div>

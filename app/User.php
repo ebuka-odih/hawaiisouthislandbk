@@ -105,9 +105,16 @@ class User extends Authenticatable implements HasMedia
     {
         if ($this->status == 1){
             return "<span class='badge bg-success'>Active</span>";
+        }elseif($this->status == 2){
+            return "<span class='badge bg-warning'>On Hold</span>";
         }else{
             return "<span class='badge bg-danger'>InActive</span>";
         }
+    }
+
+    public function fullname()
+    {
+        return $this->first_name.' '.$this->last_name;
     }
 
     public function eligable()
