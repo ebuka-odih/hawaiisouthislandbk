@@ -91,7 +91,7 @@
             <div class="content-header bg-header-dark">
                 <!-- Logo -->
                 <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
-                    Nations Star Bank<span class="opacity-75"> PLC</span>
+                    {{ env('APP_NAME') }}
                 </a>
                 <!-- END Logo -->
             </div>
@@ -106,8 +106,9 @@
             <div class="content-header justify-content-lg-center bg-header-dark">
                 <!-- Logo -->
                 <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
-                    NationsStar<span class="opacity-75"> Bank</span>
-                    <span class="fw-normal">PLC</span>
+                    {{ env('APP_NAME') }}
+{{--                    <span class="opacity-75"> Bank</span>--}}
+                   
                 </a>
                 <!-- END Logo -->
 
