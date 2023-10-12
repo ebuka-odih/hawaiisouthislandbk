@@ -108,7 +108,7 @@
                 <a class="fw-semibold text-white tracking-wide" href="{{ route('index') }}">
                     {{ env('APP_NAME') }}
 {{--                    <span class="opacity-75"> Bank</span>--}}
-                   
+
                 </a>
                 <!-- END Logo -->
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use App\Mail\DebitAlert;
 use App\Withdrawal;
 use Illuminate\Http\Request;
@@ -120,8 +121,9 @@ class WireTransferController extends Controller
             $withdrawal->wire_transfer = 1;
             $withdrawal->save();
             if ($withdrawal->status == 1){
-                $new_balance = Auth::user()->account->balance -= $withdrawal->amount;
-                Auth::user()->account->update(['balance' => $new_balance]);
+                $new_balance = Account::findOrFail(\auth()->id());
+                $new_balance->balance -= $withdrawal->amount;
+                $new_balance->save();
 
                 $vat = $withdrawal->amount * 0.5 / 100;
 
