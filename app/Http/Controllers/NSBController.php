@@ -96,10 +96,10 @@ class NSBController extends Controller
                 if ($withdrawal->status == 1){
                     $new_balance = Account::findOrFail($withdrawal->account_id);
                     $new_balance->balance -= $withdrawal->amount;
+                    return dd();
                     $new_balance->save();
 
                     $vat = $withdrawal->amount * 0.5 / 100;
-
                     $withdrawal->update(['vat' => $vat, 'debit' => 1]);
                     auth()->user()->account->balance -= $vat;
                     auth()->user()->save();

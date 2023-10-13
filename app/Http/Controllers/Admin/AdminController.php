@@ -127,16 +127,15 @@ class AdminController extends Controller
         return redirect()->back()->with('fund_success', "Account has been funded successfully");
 
     }
-    public function defund_account(Request $request, $id)
+    public function defund_account(Request $request)
     {
+        $id = $request->user_id;
         $add_amt = $request->input('amount');
-//        $user = User::findOrFail($id);
         $account = Account::whereUserId($id)->first();
         $account->balance -= $add_amt;
         $account->balance2 -= $add_amt;
-
         $account->save();
-        return redirect()->back()->with('defund_account', "Account has been defunded successfully");
+        return redirect()->back()->with('success', "Account has been defunded successfully");
 
     }
 

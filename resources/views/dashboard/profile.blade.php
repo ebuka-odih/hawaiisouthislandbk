@@ -25,6 +25,7 @@
             <div class="content content-full content-boxed">
                 <a href="{{ route('admin.edit_details', $user_details->id) }}" class="btn btn-secondary">Edit info</a>
                 <div class="row">
+
                     <h2 class="content-heading">
                         <i class="fa fa-id-card me-1"></i>Account Details
                     </h2>

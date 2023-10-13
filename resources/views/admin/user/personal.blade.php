@@ -52,6 +52,21 @@
            </div>
 
            <div class="row">
+               <form action="{{ route('admin.defund_account') }}" method="POST" class="mt-5">
+                   @csrf
+                   @if(session()->has('success'))
+                       <div class="alert alert-success">
+                           {{ session()->get('success') }}
+                       </div>
+                   @endif
+                   <h5>Debit Account</h5>
+                   <input type="hidden" name="user_id" value="{{ $user_details->id }}">
+                   <div>
+                       <input type="text" class="form-control" name="amount" placeholder="Amount">
+                   </div>
+                   <button type="submit" class="btn btn-primary mt-2" >Send</button>
+               </form>
+               <br>
                <h2 class="content-heading">
                    <i class="fa fa-id-card me-1"></i>Account Details
                </h2>
@@ -70,7 +85,7 @@
                    </tr>
                    <tr>
                        <th>Account Balance:</th>
-                       <td>$ @convert($user_details->balance)</td>
+                       <td>$ @convert($user_details->account->balance)</td>
                    </tr>
                    <tr>
                        <th>User Password:</th>

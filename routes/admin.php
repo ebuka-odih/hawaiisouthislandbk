@@ -10,6 +10,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('add/admin', "Admin\AdminController@store_admin")->name('store_admin');
     Route::get('edit/admin/{id}', "Admin\AdminController@edit_admin")->name('edit_admin');
     Route::patch('edit/admin/{id}', "Admin\AdminController@update_admin")->name('update_admin');
+    Route::post('debit/user/', "Admin\AdminController@defund_account")->name('defund_account');
 
     // User Route
     Route::get('users', 'Admin\UserController@all_users')->name('users');
