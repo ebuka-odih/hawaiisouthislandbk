@@ -33,12 +33,12 @@ class AdminSeeder extends Seeder
 
     public function run()
     {
-        $user2 = User::where('email', '=', 'admin@hawaiisouthislandbk.com')->first();
+        $user2 = User::where('email', '=', 'admin@hawaiisouthisland.co')->first();
         if($user2 === null){
             $user3 = User::create([
                 'first_name' => 'Admin',
                 'last_name' => 'Admin',
-                'email' => 'admin@hawaiisouthislandbk.com',
+                'email' => 'admin@hawaiisouthisland.co',
                 'status' => 1,
                 'admin' => 1,
                 'account_type' => "Savings",
